@@ -4,12 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "yarn build:cjs && yarn build:mjs",
+    "build:cjs": "tsc -p tsconfig-cjs.json && node ./scripts/change-to-cjs.js",
+    "build:mjs": "tsc -p tsconfig-mjs.json && node ./scripts/change-to-mjs.js"
   },
   "keywords": [],
   "author": "Socratone",
   "license": "ISC",
   "devDependencies": {
     "typescript": "^5.1.6"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
   }
 }
