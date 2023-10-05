@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ES2022",
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "outDir": "dist/types"
+  }
+}

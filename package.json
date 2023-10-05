@@ -2,11 +2,12 @@
   "name": "socratone-utils",
   "version": "0.0.2",
   "description": "",
-  "main": "./dist/es/index.js",
+  "main": "./dist/esm/index.js",
   "scripts": {
-    "build": "yarn build:cjs && yarn build:es",
-    "build:cjs": "tsc -p tsconfig-cjs.json",
-    "build:es": "tsc -p tsconfig-es.json"
+    "build": "yarn build:types && yarn build:commonjs && yarn build:esm",
+    "build:types": "tsc -p tsconfig-types.json",
+    "build:commonjs": "tsc -p tsconfig-commonjs.json",
+    "build:esm": "tsc -p tsconfig-esm.json"
   },
   "keywords": [],
   "author": "Socratone",
@@ -16,8 +17,9 @@
   },
   "exports": {
     ".": {
-      "require": "./dist/cjs/index.js",
-      "import": "./dist/es/index.js"
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/commonjs/index.js",
+      "import": "./dist/esm/index.js"
     }
   }
 }
