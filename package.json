@@ -4,8 +4,7 @@
   "description": "",
   "main": "./dist/esm/index.js",
   "scripts": {
-    "build": "yarn build:types && yarn build:commonjs && yarn build:esm",
-    "build:types": "tsc -p tsconfig-types.json",
+    "build": "yarn build:commonjs && yarn build:esm",
     "build:commonjs": "tsc -p tsconfig-commonjs.json",
     "build:esm": "tsc -p tsconfig-esm.json"
   },
@@ -17,7 +16,6 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
       "require": "./dist/commonjs/index.js",
       "import": "./dist/esm/index.js"
     }
